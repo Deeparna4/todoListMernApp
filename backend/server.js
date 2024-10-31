@@ -1,4 +1,6 @@
 //Express
+require('dotenv').config();
+
 const express=require('express');
 const mongoose=require('mongoose');
 const cors=require('cors')
@@ -8,7 +10,7 @@ app.use(cors())
 // let todos=[];
 
 //connecting mongoose
-mongoose.connect('mongodb://localhost:27017/mern-app')
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
     console.log('DB connceted!')
 })
@@ -85,9 +87,9 @@ res.status(204).end();
 })
 
 //Start the server
-const port = 8000;
-app.listen(port, () => {
-    console.log("Server is listening to port "+port);
+// const port = 8000;
+app.listen(process.env.PORT, () => {
+    console.log("Server is listening to port "+process.env.PORT);
 })
 
 
