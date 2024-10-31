@@ -17,7 +17,7 @@ export default function Todo() {
   const [editTitle, setEditTitle] = useState("");
   const [editDescription, setEditDescription] = useState("");
 
-  const apiUrl = "http://localhost:8000";
+  const apiUrl = "https://todolistmernapp.onrender.com";
   const handleSubmit = () => {
     setError("");
     if (title.trim() !== "" && description.trim() !== "") {
